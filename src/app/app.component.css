@@ -1,0 +1,33 @@
+
+header h1 { text-align: center; font-weight: bold; padding: 10px 0px; font-size: 25px; color: maroon }
+.container .form-group { min-height: 35px; }
+.container .form-group label { width: 30%; float: left;
+	padding-top: 10px; }
+.container .form-group input, .container .date, .container .form-group select { width: 70%; float: left; }
+.container .date input  { width: 100%; float: none; }
+.tab-pane { border: 3px solid springgreen; border-radius:25px 25px 25px 25px; border-top:1; padding: 15px 0px; }
+.nav.nav-tabs .active { font-weight: bold; }
+.nav.nav-tabs a { border: 1px solid #ddd; margin-right: 7px; }
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover { background: yellow; border: 1px solid #ddd;
+	color: #333; }
+.form-slider { width: 70%; float: left; margin-top: 8px; }
+.form-slider b { float: left; width: 20px; display: inline-block; margin-right: 10px;padding-top: 3px; }
+.form-slider input + b { float: left; width: 20px; display: inline-block; margin-left:10px; margin-right: 0; }
+.form-slider .slider.slider-horizontal { width: calc(100% - 60px); float: left; }
+.slider-track-low, .slider-track-high { background: #969696; }
+.btn-secondary { color: #fff; background-color: #6c757d;  border-color: #6c757d; }
+.btn-secondary:hover { color: #fff; background-color: #5a6268; border-color: #545b62; }
+.form-btns { text-align: center; }
+.form-btns button { margin-right: 10px; width: 100px; }
+
+.task-table { width: 95%; margin: 0 auto; }
+.task-table table thead th { color: black; background:lightcoral; border-color: #ddd; text-align: center;font-weight: bold; }
+.task-table table thead th:first-child { border-left: 0; }
+.task-table table thead th:last-child { }
+.table-bordered { border: 0; margin-bottom: 0; }
+.task-table .table>tbody>tr>td { vertical-align: middle; } 
+.task-table .table>tbody>tr>td:last-child { text-align: center; }
+.task-table .table>tbody>tr>td:last-child button { margin-right: 10px; }
+
+footer { padding: 10px 0px; color: red }
+.frst-label{width:14% !important;}
