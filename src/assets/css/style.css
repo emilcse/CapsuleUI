@@ -25,7 +25,7 @@ header h1 { text-align: center; font-weight: bold; padding: 10px 0px; font-size:
 	padding-top: 10px; }
 .container .form-group input, .container .date, .container .form-group select { width: 70%; float: left; }
 .container .date input  { width: 100%; float: none; }
-.tab-pane { border: 1px solid #ddd; border-radius:0px 0px 5px 5px; border-top:0; padding: 15px 0px; }
+.tab-pane{ border: 1px solid #ddd; border-radius:0px 0px 5px 5px; border-top:0; padding: 15px 0px; }
 .nav.nav-tabs .active { font-weight: bold; }
 .nav.nav-tabs a { border: 1px solid #ddd; margin-right: 7px; }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover { background: #ddd; border: 1px solid #ddd;
@@ -38,7 +38,7 @@ header h1 { text-align: center; font-weight: bold; padding: 10px 0px; font-size:
 .btn-secondary { color: #fff; background-color: #6c757d;  border-color: #6c757d; }
 .btn-secondary:hover { color: #fff; background-color: #5a6268; border-color: #545b62; }
 .form-btns { text-align: center; }
-.form-btns button { margin-right: 10px; width: 100px; }
+.form-btns button { margin-right: 10px; width: 115px !important} 
 
 .task-table { width: 95%; margin: 0 auto; }
 .task-table table thead th { color: #fff; background: #6b7881; border-color: #ddd; text-align: center; }
@@ -50,9 +50,11 @@ header h1 { text-align: center; font-weight: bold; padding: 10px 0px; font-size:
 .task-table .table>tbody>tr>td:last-child button { margin-right: 10px; }
 
 footer { padding: 10px 0px; }
-.frst-label{width:14% !important;}
+.frst-label{width:16% !important;}
 
-
+.parentTaskcheck{margin-left: 12%;}
+.parentTaskcheck #parentTask{width: 5%;}
+.parentTaskcheck label{padding-top: 4px !important;}
 
 
 
@@ -342,8 +344,78 @@ footer { padding: 10px 0px; }
 }
 
 
+
 /* Form Error */
-.submitted .form-control.ng-invalid,
+.projectSubmitted .form-control.ng-invalid,.submitted .form-control.ng-invalid,.addUserSubmitted .form-control.ng-invalid,
 .form-control.ng-invalid.ng-touched{
   border-color: #ff0000;
+}
+
+.listView 
+{
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.modContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.modContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+ .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+} 
+
+/* On mouse-over, add a grey background color */
+ .modContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+} 
+
+/* When the radio button is checked, add a blue background */
+ .modContainer input:checked ~ .checkmark {
+  background-color: #2196F3;
+} 
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.modContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.modContainer .checkmark:after {
+ top: 9px;
+left: 9px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: white;
 }

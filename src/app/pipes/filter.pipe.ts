@@ -6,33 +6,37 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if(args.Parent_ID){
-       value = value.filter(task => task.Parent_ID == args.Parent_ID);
-    }
-    if(args.Task){
-       value = value.filter(task => task.Task.toLowerCase().indexOf(args.Task.toLowerCase()) != -1);
-    }
-    if(args.PriorityFrom){
-       value = value.filter(task =>  task.Priority >= args.PriorityFrom );
-    }
-     if(args.PriorityTo){
-       value = value.filter(task =>  task.Priority <= args.PriorityTo );
-    }
-    if(args.Start_Date){
-       value = value.filter((task) => {
-        let Start_Date = task.Start_Date.substring(0,10).split('-');
-        let startDateSearch = args.Start_Date.substring(0,10).split('-');
-        return new Date(Start_Date[0],Start_Date[1]-1,Start_Date[2]) >= new Date(startDateSearch[0],startDateSearch[1]-1,startDateSearch[2]);
-      });
-    }
-    if(args.End_Date){
-       value = value.filter((task) => {
-        let End_Date = task.End_Date.substring(0,10).split('-');
-        let endDateSearch = args.End_Date.substring(0,10).split('-');
-        return new Date(End_Date[0],End_Date[1]-1,End_Date[2]) <= new Date(endDateSearch[0],endDateSearch[1]-1,endDateSearch[2]);
-      });
+    if (args.UserNameSearch) {
+      value = value.filter(user => user.First_Name.toLowerCase().indexOf(args.UserNameSearch.toLowerCase()) != -1 || (user.Last_Name.toLowerCase().indexOf(args.UserNameSearch.toLowerCase()) != -1));
     }
 
+    if (args.ProjectSearch) {
+      value = value.filter(task => task.Project_Name.toLowerCase().indexOf(args.ProjectSearch.toLowerCase()) != -1);
+    }
+
+    if (args.AllProjectSearch) {
+      value = value.filter(proj => proj.Project.toLowerCase().indexOf(args.AllProjectSearch.toLowerCase()) != -1);
+    }
+
+    if (args.radioProjectSearch) {
+      value = value.filter(project => project.Project.toLowerCase().indexOf(args.radioProjectSearch.toLowerCase()) != -1);
+    }
+
+    if (args.radioTaskProjectSearch) {
+      value = value.filter(proj => proj.Project.toLowerCase().indexOf(args.radioTaskProjectSearch.toLowerCase()) != -1);
+    }
+
+    if (args.radioManagerSearch) {
+      value = value.filter(manager => manager.Manager_ID == args.radioManagerSearch);
+    }
+
+    if (args.radioParentTaskSearch) {
+      value = value.filter(parent => parent.Parent_Task.toLowerCase().indexOf(args.radioParentTaskSearch.toLowerCase()) != -1);
+    }
+
+    if (args.radioUserTaskSearch) {
+      value = value.filter(user => user.First_Name.toLowerCase().indexOf(args.radioUserTaskSearch.toLowerCase()) != -1 || (user.Last_Name.toLowerCase().indexOf(args.radioUserTaskSearch.toLowerCase()) != -1));
+    }
 
     return value;
 

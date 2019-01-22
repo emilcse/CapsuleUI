@@ -1,9 +1,9 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "../node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PROJECT-TaskManager": {
+    "ProjectManager": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/PROJECT-TaskManager",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,13 +23,9 @@
               "src/assets"
             ],
             "styles": [
-            //   "../node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [ 
-             // "../node_modules/jquery/dist/jquery.min.js",
-             //  "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-            //"../node_modules/bootstrap-slider/dist/bootstrap-slider.min.js"
               ]
           },
           "configurations": {
@@ -55,18 +51,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "PROJECT-TaskManager:build"
+            "browserTarget": "ProjectManager:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "PROJECT-TaskManager:build:production"
+              "browserTarget": "ProjectManager:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PROJECT-TaskManager:build"
+            "browserTarget": "ProjectManager:build"
           }
         },
         "test": {
@@ -99,7 +95,7 @@
         }
       }
     },
-    "PROJECT-TaskManager-e2e": {
+    "ProjectManager-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -107,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "PROJECT-TaskManager:serve"
+            "devServerTarget": "ProjectManager:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "PROJECT-TaskManager:serve:production"
+              "devServerTarget": "ProjectManager:serve:production"
             }
           }
         },
@@ -127,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "Project Manager"
+  "defaultProject": "ProjectManager"
 }
